@@ -173,12 +173,6 @@ void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatr
   }
 }
 
-// int InputNumbers(string input)
-// {
-//   Console.Write(input);
-//   int output = Convert.ToInt32(Console.ReadLine());
-//   return output;
-// }
 
 void FillArrayRandomNumbers(int[,] array)
 {
@@ -186,7 +180,7 @@ void FillArrayRandomNumbers(int[,] array)
   {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-      array[i, j] = new Random().Next(9);
+      array[i, j] = new Random().Next(1,9);
     }
   }
 }
