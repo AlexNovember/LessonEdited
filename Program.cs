@@ -54,7 +54,7 @@
 //             Reverse(arr);
 //             Console.WriteLine("Отсортированный массив:");
 //             printArray(arr);
-            // Console.ReadKey();
+            
 
 
 
@@ -136,63 +136,66 @@
 // 15 18
 
 
-Console.Clear();
-int a = 2;
-int b = 2;
-int[,] firstMartrix = new int[a, b];
-FillArrayRandomNumbers(firstMartrix);
-Console.WriteLine("Первая матрица:");
-PrintArray(firstMartrix);
+// Console.Clear();
+// int a = 2;
+// int b = 2;
+// int[,] firstMartrix = new int[a, b];
+// FillArrayRandomNumbers(firstMartrix);
+// Console.WriteLine("Первая матрица:");
+// PrintArray(firstMartrix);
 
 
-int[,] secomdMartrix = new int[a, b];
-FillArrayRandomNumbers(secomdMartrix);
-Console.WriteLine("Вторая матрица:");
-PrintArray(secomdMartrix);
+// int[,] secomdMartrix = new int[a, b];
+// FillArrayRandomNumbers(secomdMartrix);
+// Console.WriteLine("Вторая матрица:");
+// PrintArray(secomdMartrix);
 
 
-int[,] resultMatrix = new int[a, b];
+// int[,] resultMatrix = new int[a, b];
 
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
-Console.WriteLine("Произведение первой и второй матриц:");
-PrintArray(resultMatrix);
+// MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
+// Console.WriteLine("Произведение матриц:");
+// PrintArray(resultMatrix);
+// Console.WriteLine();
 
-void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
-{
-  for (int i = 0; i < resultMatrix.GetLength(0); i++)
-  {
-    for (int j = 0; j < resultMatrix.GetLength(1); j++)
-    {
-      int sum = 0;
-      for (int k = 0; k < firstMartrix.GetLength(1); k++)
-      {
-        sum += firstMartrix[i,k] * secomdMartrix[k,j];
-      }
-      resultMatrix[i,j] = sum;
-    }
-  }
-}
+// void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
+// {
+//   for (int i = 0; i < resultMatrix.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < resultMatrix.GetLength(1); j++)
+//     {
+//       int sum = 0;
+//       for (int k = 0; k < firstMartrix.GetLength(1); k++)
+//       {
+//         sum += firstMartrix[i,k] * secomdMartrix[k,j];
+//       }
+//       resultMatrix[i,j] = sum;
+//     }
+//   }
+// }
 
 
-void FillArrayRandomNumbers(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(1,9);
-    }
-  }
-}
+// void FillArrayRandomNumbers(int[,] array)
+// {
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       array[i, j] = new Random().Next(1,9);
+//     }
+//   }
+// }
 
-void PrintArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write("{0,3}", array[i,j]);
-    }
-    Console.WriteLine();
-  }
-}
+// void PrintArray (int[,] array)
+// {
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       Console.Write("{0,3}", array[i,j]);
+//     }
+//     Console.WriteLine();
+//   }
+// }
+
+
