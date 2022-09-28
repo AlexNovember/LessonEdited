@@ -11,51 +11,114 @@
 // 8 4 4 2
 
 
-Console.Clear();
-int[,] Input()
-        
-        {
-            Console.Write("Введите размерность массива (N x M): \nN = ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.Write("M = ");
-            int m = Convert.ToInt32(Console.ReadLine());
+//         {
+//             Console.Write("Введите размерность массива (N x M): \nN = ");
+//             int n = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("M = ");
+//             int m = Convert.ToInt32(Console.ReadLine());
             
             
-            int[,] array = new int[n, m];
-            Random rnd = new Random();
-            for (int i = 0; i < array.GetLength(0); i++)
-                for (int j = 0; j < array.GetLength(1); j++)
-                    array[i, j] = rnd.Next(0, 20);
-            return array;
-        }
+//             int[,] array = new int[n, m];
+//             Random rnd = new Random();
+//             for (int i = 0; i < array.GetLength(0); i++)
+//                 for (int j = 0; j < array.GetLength(1); j++)
+//                     array[i, j] = rnd.Next(0, 20);
+//             return array;
+//         }
         
         
-        void printArray(int[,] array)
-        {
-            for (int i = 0; i < array.GetLength(0); i++, Console.WriteLine())
-                for (int j = 0; j < array.GetLength(1); j++)
-                    Console.Write("{0,5}", array[i, j]);
-        }
-        void Reverse(int[,] array)
-        {
-            int Temp;
-            for (int k = 0; k < array.GetLength(0); k++)
-                for (int i = 0; i < array.GetLength(1) - 1; i++)
-                    for (int j = i + 1; j < array.GetLength(1); j++)
-                        if (array[k, j] > array[k, i])
-                        {
-                            Temp = array[k, j];
-                            array[k, j] = array[k, i];
-                            array[k, i] = Temp;
-                        }
+//         void printArray(int[,] array)
+//         {
+//             for (int i = 0; i < array.GetLength(0); i++, Console.WriteLine())
+//                 for (int j = 0; j < array.GetLength(1); j++)
+//                     Console.Write("{0,5}", array[i, j]);
+//         }
+//         void Reverse(int[,] array)
+//         {
+//             int Temp;
+//             for (int k = 0; k < array.GetLength(0); k++)
+//                 for (int i = 0; i < array.GetLength(1) - 1; i++)
+//                     for (int j = i + 1; j < array.GetLength(1); j++)
+//                         if (array[k, j] > array[k, i])
+//                         {
+//                             Temp = array[k, j];
+//                             array[k, j] = array[k, i];
+//                             array[k, i] = Temp;
+//                         }
  
-                    }
+//                     }
  
-     
-            int[,] arr = Input();
-            Console.WriteLine("Исходный массив:");
-            printArray(arr);
-            Reverse(arr);
-            Console.WriteLine("Отсортированный массив:");
-            printArray(arr);
+//             int[,] arr = Input();
+//             Console.WriteLine("Исходный массив:");
+//             printArray(arr);
+//             Reverse(arr);
+//             Console.WriteLine("Отсортированный массив:");
+//             printArray(arr);
             // Console.ReadKey();
+
+
+
+
+// Задача 56: Задайте прямоугольный двумерный массив. 
+// Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке 
+// и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+
+Console.Clear();
+Console.Write("Введите количество строк массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов массива: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+int[,] numbers = new int[n, m];
+int Sum = 0, Sum1 = 0, Sum2 = 0, Row = 0;
+
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+
+           
+            for(int i = 0; i < n; i++) //Проходим по циклу строк
+            {
+                Sum2 = 0;
+                for(int j = 0; j < m; j++) //Проходим по циклу столбцов
+                {   
+                    Sum2 += numbers[i, j];  //Сумма всех членов 1ой строки.
+                } 
+                if(Sum2 < Sum1)
+                {   
+                    Sum = Sum2; Row = i+1;    
+                }
+                Sum1 = Sum2;
+            }
+        
+            Console.WriteLine($"Наименьшая сумма элементов в строке {Row} = {Sum}");
+            Console.WriteLine();
+ 
+void FillArrayRandomNumbers(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 9);
+        }
+    }
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+            for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write("{0,3}", array[i, j]);
+        }
+            Console.WriteLine();
+    }
+}
