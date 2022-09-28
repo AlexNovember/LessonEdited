@@ -13,3 +13,16 @@ obj/Debug/net6.0/13.csproj.AssemblyReference.cache
 obj/Debug/net6.0/13.GeneratedMSBuildEditorConfig.editorconfig
 obj/Debug/net6.0/13.GlobalUsings.g.cs
 13.csproj
+bin/Debug/net6.0/13.deps.json
+bin/Debug/net6.0/13.dll
+bin/Debug/net6.0/13.exe
+bin/Debug/net6.0/13.pdb
+bin/Debug/net6.0/13.runtimeconfig.json
+obj/Debug/net6.0/13.csproj.CoreCompileInputs.cache
+obj/Debug/net6.0/13.csproj.FileListAbsolute.txt
+obj/Debug/net6.0/13.dll
+obj/Debug/net6.0/13.genruntimeconfig.cache
+obj/Debug/net6.0/13.pdb
+obj/Debug/net6.0/apphost.exe
+obj/Debug/net6.0/ref/13.dll
+obj/Debug/net6.0/refint/13.dll
