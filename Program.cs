@@ -11,52 +11,52 @@
 // 8 4 4 2
 
 
-Console.Clear();
-int[,] Input()
+// Console.Clear();
+// int[,] Input()
         
-        {
-            Console.Write("Введите размерность массива (N x M): \nN = ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.Write("M = ");
-            int m = Convert.ToInt32(Console.ReadLine());
+//         {
+//             Console.Write("Введите размерность массива (N x M): \nN = ");
+//             int n = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("M = ");
+//             int m = Convert.ToInt32(Console.ReadLine());
             
             
-            int[,] array = new int[n, m];
-            Random rnd = new Random();
-            for (int i = 0; i < array.GetLength(0); i++)
-                for (int j = 0; j < array.GetLength(1); j++)
-                    array[i, j] = rnd.Next(1, 10);
-            return array;
-        }
+//             int[,] array = new int[n, m];
+//             Random rnd = new Random();
+//             for (int i = 0; i < array.GetLength(0); i++)
+//                 for (int j = 0; j < array.GetLength(1); j++)
+//                     array[i, j] = rnd.Next(1, 10);
+//             return array;
+//         }
         
         
-        void printArray(int[,] array)
-        {
-            for (int i = 0; i < array.GetLength(0); i++, Console.WriteLine())
-                for (int j = 0; j < array.GetLength(1); j++)
-                    Console.Write("{0,5}", array[i, j]);
-        }
-        void Reverse(int[,] array)
-        {
-            int Temp;
-            for (int k = 0; k < array.GetLength(0); k++)
-                for (int i = 0; i < array.GetLength(1) - 1; i++)
-                    for (int j = i + 1; j < array.GetLength(1); j++)
-                        if (array[k, j] > array[k, i])
-                        {
-                            Temp = array[k, j];
-                            array[k, j] = array[k, i];
-                            array[k, i] = Temp;
-                        }
+//         void printArray(int[,] array)
+//         {
+//             for (int i = 0; i < array.GetLength(0); i++, Console.WriteLine())
+//                 for (int j = 0; j < array.GetLength(1); j++)
+//                     Console.Write("{0,5}", array[i, j]);
+//         }
+//         void Reverse(int[,] array)
+//         {
+//             int Temp;
+//             for (int k = 0; k < array.GetLength(0); k++)
+//                 for (int i = 0; i < array.GetLength(1) - 1; i++)
+//                     for (int j = i + 1; j < array.GetLength(1); j++)
+//                         if (array[k, j] > array[k, i])
+//                         {
+//                             Temp = array[k, j];
+//                             array[k, j] = array[k, i];
+//                             array[k, i] = Temp;
+//                         }
  
-                    }
+//                     }
  
-            int[,] array = Input();
-            Console.WriteLine("Исходный массив:");
-            printArray(array);
-            Reverse(array);
-            Console.WriteLine("Отсортированный массив:");
-            printArray(array);
+//             int[,] array = Input();
+//             Console.WriteLine("Исходный массив:");
+//             printArray(array);
+//             Reverse(array);
+//             Console.WriteLine("Отсортированный массив:");
+//             printArray(array);
             
 
 
@@ -147,12 +147,10 @@ int[,] Input()
 // Console.WriteLine("Первая матрица:");
 // PrintArray(firstMartrix);
 
-
 // int[,] secomdMartrix = new int[a, b];
 // FillArrayRandomNumbers(secomdMartrix);
 // Console.WriteLine("Вторая матрица:");
 // PrintArray(secomdMartrix);
-
 
 // int[,] resultMatrix = new int[a, b];
 
@@ -176,7 +174,6 @@ int[,] Input()
 //     }
 //   }
 // }
-
 
 // void FillArrayRandomNumbers(int[,] array)
 // {
@@ -219,8 +216,11 @@ int[,] Input()
 // int z = 2;
 
 // int[,,] array3number = new int[x, y, z];
+// Console.Write($"Массив размером {x} x {y} x {z}\n");
+// Console.WriteLine();
 // FillArrayRandomNumbers(array3number);
 // WriteArray(array3number);
+// Console.WriteLine(" ");
 
 // void WriteArray (int[,,] array3number)
 // {
@@ -284,41 +284,41 @@ int[,] Input()
 // 10 09 08 07
 
 
-// Console.Clear();
+Console.Clear();
 
-// int n = 4;
-// int[,] Spirale = new int[n, n];
-// int temp = 1;
-// int i = 0;
-// int j = 0;
+int n = 4;
+int[,] Spirale = new int[n, n];
+int temp = 1;
+int i = 0;
+int j = 0;
 
-// while (temp <= Spirale.GetLength(0) * Spirale.GetLength(1))
-// {
-//   Spirale[i, j] = temp;
-//   temp++;
-//   if (i <= j + 1 && i + j < Spirale.GetLength(1) - 1)
-//     j++;
-//   else if (i < j && i + j >= Spirale.GetLength(0) - 1)
-//     i++;
-//   else if (i >= j && i + j > Spirale.GetLength(1) - 1)
-//     j--;
-//   else
-//     i--;
-// }
+while (temp <= Spirale.GetLength(0) * Spirale.GetLength(1))
+{
+  Spirale[i, j] = temp;
+  temp++;
+  if (i <= j + 1 && i + j < Spirale.GetLength(1) - 1)
+    j++;
+  else if (i < j && i + j >= Spirale.GetLength(0) - 1)
+    i++;
+  else if (i >= j && i + j > Spirale.GetLength(1) - 1)
+    j--;
+  else
+    i--;
+}
 
-// PrintArray(Spirale);
+PrintArray(Spirale);
 
-// void PrintArray (int[,] array)
-// {
-//   for (int i = 0; i < array.GetLength(0); i++)
-//   {
-//     for (int j = 0; j < array.GetLength(1); j++)
-//     {
-//       if (array[i,j] / 10 <= 0)
-//       Console.Write("{0,3}", array[i,j]);
+void PrintArray (int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+      if (array[i,j] / 10 <= 0)
+      Console.Write("{0,3}", array[i,j]);
 
-//       else Console.Write("{0,3}", array[i,j]);
-//     }
-//     Console.WriteLine();
-//   }
-// }
+      else Console.Write("{0,3}", array[i,j]);
+    }
+    Console.WriteLine();
+  }
+}
